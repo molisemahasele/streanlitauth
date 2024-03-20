@@ -1,3 +1,5 @@
 streamlit
 pyyaml
 streamlit-authenticator
+pandas
+plotly
