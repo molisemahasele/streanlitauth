@@ -1,5 +1,7 @@
 streamlit
-pyyaml
 streamlit-authenticator
+pyyaml
 pandas
 plotly
+scikit-learn
+matplotlib
