@@ -63,14 +63,14 @@ if st.session_state["authentication_status"]:
     st.plotly_chart(fig_pie)
     st.plotly_chart(fig_line)
 
-    fig = px.bar(data['Operator'].value_counts().reset_index(), 
+    """fig = px.bar(data['Operator'].value_counts().reset_index(), 
              x='index', 
              y='Operator', 
              labels={'index': 'Operator', 'Operator': 'Frequency'},
              title='Frequency of Each Operator')
 
     # Show the graph using Streamlit
-    st.plotly_chart(fig)
+    st.plotly_chart(fig)"""
 
     # Preprocessing function
     def preprocess_data(data):
