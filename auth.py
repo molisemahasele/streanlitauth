@@ -10,6 +10,12 @@ from sklearn.metrics import accuracy_score
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
+def calculate_stats(data, column):
+    mode = data[column].mode().values
+    mean = data[column].mean()
+    median = data[column].median()
+    return mode, mean, median
+
 with open('config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
@@ -152,6 +158,23 @@ if st.session_state["authentication_status"]:
         
         # Plot clustering results
         plot_clusters(cluster_data, cluster_labels)
+
+        # Button to calculate stats
+        if st.button("Calculate Statistics"):
+            # Calculate statistics for Reason
+            st.write("### Reason Statistics")
+            reason_mode, reason_mean, reason_median = calculate_stats(data, 'Reason')
+            st.write(f"Mode: {reason_mode}")
+            st.write(f"Mean: {reason_mean}")
+            st.write(f"Median: {reason_median}")
+    
+            # Calculate statistics for Capacity
+            st.write("### Capacity Statistics")
+            capacity_mode, capacity_mean, capacity_median = calculate_stats(data, 'Capacity')
+            st.write(f"Mode: {capacity_mode}")
+            st.write(f"Mean: {capacity_mean}")
+            st.write(f"Median: {capacity_median}")
+
 
     if __name__ == "__main__":
         main()
