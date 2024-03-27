@@ -140,15 +140,7 @@ if st.session_state["authentication_status"]:
         # User input for operator
         operator_value = st.number_input("Enter Operator Value:")
         
-        df_eggs = pd.read_excel(excel_file, usecols='D')
-        mean_capacity = df_eggs['Capacity'].mean()
-        variance_capacity = df_eggs['Capacity'].var()
-        #mode_capacity = statistics.mode(df_eggs['Number of eggs'])
-        #median_capacity = df_eggs['Number of eggs'].median()
-        #min_capacity = df_eggs['Number of eggs'].min()
-        #max_eggs = df_eggs['Number of eggs'].max()
-        #std_dev_eggs = df_eggs['Number of eggs'].std()
-        st.write(f"Mean number of eggs: {mean_capacity}")
+        capacity_mean = data['Capacity'].mean()
 
 
         
