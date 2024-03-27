@@ -63,14 +63,7 @@ if st.session_state["authentication_status"]:
     st.plotly_chart(fig_pie)
     st.plotly_chart(fig_line)
 
-    """fig = px.bar(data['Operator'].value_counts().reset_index(), 
-             x='index', 
-             y='Operator', 
-             labels={'index': 'Operator', 'Operator': 'Frequency'},
-             title='Frequency of Each Operator')
-
-    # Show the graph using Streamlit
-    st.plotly_chart(fig)"""
+   
 
     # Preprocessing function
     def preprocess_data(data):
@@ -155,7 +148,7 @@ if st.session_state["authentication_status"]:
         cluster_data = X.copy()  # Use X without the target variable
         cluster_labels = perform_clustering(cluster_data)
         cluster_data['Cluster'] = cluster_labels
-        st.write(cluster_data)
+        #st.write(cluster_data)
         
         # Plot clustering results
         plot_clusters(cluster_data, cluster_labels)
