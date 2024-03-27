@@ -139,9 +139,30 @@ if st.session_state["authentication_status"]:
         
         # User input for operator
         operator_value = st.number_input("Enter Operator Value:")
+
+        st.title("Get statistics for capacity")
         
-        capacity_mean = data['Capacity'].mean()
-        st.write("Mean of Capacity:", capacity_mean)
+        # Button to calculate statistics
+        if st.button("Calculate Capacity Statistics"):
+            # Calculate the mean of Capacity
+            capacity_mean = data['Capacity'].mean()
+            st.write("Mean of Capacity:", capacity_mean)
+            
+            # Calculate the median of Capacity
+            capacity_median = statistics.median(data['Capacity'])
+            st.write("Median of Capacity:", capacity_median)
+            
+            # Calculate the mode of Capacity
+            capacity_mode = statistics.mode(data['Capacity'])
+            st.write("Mode of Capacity:", capacity_mode)
+            
+            # Calculate the variance of Capacity
+            capacity_variance = data['Capacity'].var()
+            st.write("Variance of Capacity:", capacity_variance)
+            
+            # Calculate the standard deviation of Capacity
+            capacity_std_dev = data['Capacity'].std()
+            st.write("Standard Deviation of Capacity:", capacity_std_dev)
 
         
     if __name__ == "__main__":
