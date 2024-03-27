@@ -141,7 +141,7 @@ if st.session_state["authentication_status"]:
         operator_value = st.number_input("Enter Operator Value:")
         
         capacity_mean = data['Capacity'].mean()
-
+        st.write("Mean of Capacity:", capacity_mean)
 
         
     if __name__ == "__main__":
