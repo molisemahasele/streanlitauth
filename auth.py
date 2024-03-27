@@ -9,6 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
+import statistics
 
 with open('config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
